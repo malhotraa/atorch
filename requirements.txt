@@ -10,3 +10,4 @@ colorama==0.4.3
 pep8-naming==0.11.1
 darglint
 tbb
+torch
