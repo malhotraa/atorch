@@ -109,6 +109,7 @@ def test_module(size_a, size_b):
     assert named_parameters["parameter_a"].value == VAL_A
     assert named_parameters["parameter_b"].value == VAL_B
     assert named_parameters["extra_parameter_0"].value is None
+    assert named_parameters["module_c.parameter_a"].value == VAL_A
 
 
 @pytest.mark.task0_4
@@ -131,8 +132,10 @@ def test_stacked_module(size_a, size_b, val):
     assert named_parameters["parameter_a"].value == val
     assert named_parameters["module_a.parameter_a"].value == VAL_A
     assert named_parameters["module_a.parameter_b"].value == VAL_B
+    assert named_parameters["module_a.module_c.parameter_a"].value == VAL_A
     assert named_parameters["module_b.parameter_a"].value == VAL_A
     assert named_parameters["module_b.parameter_b"].value == VAL_B
+    assert named_parameters["module_b.module_c.parameter_a"].value == VAL_A
 
 
 # ## Misc Tests
